@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model ContactSubmission {
+  id          String   @id @default(uuid())
+  type        String   // e.g., "automotive", "dealer", "support", "bulk"
+  name        String
+  phone       String
+  email       String?
+  location    String?
+  business    String?  // specifically for dealer applications
+  experience  Int?     // specifically for dealer applications
+  message     String?
+  status      String   @default("new") // "new", "read", "resolved"
+  createdAt   DateTime @default(now())
+}
