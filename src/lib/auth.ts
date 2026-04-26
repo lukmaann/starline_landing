@@ -5,16 +5,12 @@ import bcrypt from 'bcryptjs';
 const SESSION_COOKIE_NAME = 'starline_admin_session';
 
 export async function login(password: string) {
-  const envPassword = process.env.ADMIN_PASSWORD;
   const envHash = process.env.ADMIN_PASSWORD_HASH;
 
   let isValid = false;
 
   if (envHash) {
     isValid = await bcrypt.compare(password, envHash);
-  } else if (envPassword) {
-    // Fallback to plain text for backward compatibility before migration
-    isValid = password === envPassword;
   }
 
   if (isValid) {
