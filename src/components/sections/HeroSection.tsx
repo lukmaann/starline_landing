@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Zap } from "lucide-react";
@@ -42,12 +43,16 @@ export function HeroSection() {
               <span className="text-white/90 italic tracking-wider">Always The Winner</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-black text-lg h-14 px-8 rounded-none group">
-                Explore Products
-                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white font-black text-lg h-14 px-8 rounded-none group">
+                <Link href="/#products">
+                  Explore Products
+                  <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-black text-lg h-14 px-8 rounded-none">
-                Find Dealer
+              <Button asChild size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-black text-lg h-14 px-8 rounded-none">
+                <Link href="/find-dealer">
+                  Find Dealer
+                </Link>
               </Button>
             </div>
           </div>

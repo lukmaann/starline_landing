@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const inter = localFont({
+  src: "./fonts/Inter-Variable.ttf",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const outfit = localFont({
+  src: "./fonts/Outfit-Variable.ttf",
+  variable: "--font-outfit",
+  display: "swap",
+});
 
 export const viewport = {
   width: "device-width",
@@ -15,6 +24,7 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.starlinebattery.com"),
   title: "Starline Batteries | Always The Winner",
   description: "High-performance automotive, industrial, and tubular batteries engineered for maximum backup and durability. Starline Batteries - Reliable power anytime you need it.",
   keywords: "car battery, tractor battery, automotive battery, tubular battery, Starline Batteries, Belagavi, inverter battery, industrial battery",

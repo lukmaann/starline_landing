@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Globe, Send, Handshake, Check } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, Handshake, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { submitContactForm } from "@/lib/actions";
@@ -57,7 +57,7 @@ export default function ContactPage() {
           <p className="text-xl md:text-2xl text-white/90 font-bold mb-2">Let’s Power Your Next Move</p>
           <p className="text-white/70 max-w-2xl mx-auto">
             Reliable support. Quick response. Trusted partnership with Starline Batteries.<br className="hidden md:block" />
-            Whether you're looking for the right automotive battery, dealership opportunities, or bulk supply — our team is ready to assist you.
+            Whether you&apos;re looking for the right automotive battery, dealership opportunities, or bulk supply, our team is ready to assist you.
           </p>
         </div>
       </section>

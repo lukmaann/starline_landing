@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,7 +11,7 @@ const navLinks = [
   { name: "Products", href: "/#products" },
   { name: "About Us", href: "/about" },
   { name: "Performance", href: "/#performance" },
-  { name: "Strength", href: "/#strength" },
+  { name: "Find Dealer", href: "/find-dealer" },
   { name: "Testimonials", href: "/#testimonials" },
   { name: "FAQ", href: "/#faq" },
 ];

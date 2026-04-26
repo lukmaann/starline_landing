@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Zap, Target, ShieldCheck, Factory } from "lucide-react";
+import { Zap, Target, ShieldCheck } from "lucide-react";
 
 export default function AboutPage() {
   return (

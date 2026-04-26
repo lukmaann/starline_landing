@@ -28,17 +28,35 @@ export default function AdminDashboard() {
   const [typeFilter, setTypeFilter] = useState("all");
 
   useEffect(() => {
-    fetchSubmissions();
+    let isActive = true;
+
+    async function loadSubmissions() {
+      const result = await getSubmissions();
+      if (!isActive) {
+        return;
+      }
+
+      if (result.success && result.submissions) {
+        setSubmissions(result.submissions);
+      }
+      setLoading(false);
+    }
+
+    void loadSubmissions();
+
+    return () => {
+      isActive = false;
+    };
   }, []);
 
-  const fetchSubmissions = async () => {
+  async function fetchSubmissions() {
     setLoading(true);
     const result = await getSubmissions();
     if (result.success && result.submissions) {
       setSubmissions(result.submissions);
     }
     setLoading(false);
-  };
+  }
 
   const handleResolve = async (id: string) => {
     await markSubmissionResolved(id);
@@ -162,7 +180,7 @@ export default function AdminDashboard() {
               {/* Message */}
               {sub.message && (
                 <div className="bg-zinc-900 rounded-xl p-4 mb-6 text-white/80 italic border border-white/5">
-                  "{sub.message}"
+                  &ldquo;{sub.message}&rdquo;
                 </div>
               )}
 

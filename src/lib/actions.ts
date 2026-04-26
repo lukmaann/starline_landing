@@ -111,13 +111,63 @@ export async function deleteSubmission(id: string) {
   }
 }
 
+// DEALER ACTIONS
+
+export async function createDealer(data: {
+  name: string;
+  address: string;
+  phone?: string;
+  latitude: number;
+  longitude: number;
+}) {
+  try {
+    const dealer = await prisma.dealer.create({
+      data: {
+        name: data.name,
+        address: data.address,
+        phone: data.phone,
+        latitude: data.latitude,
+        longitude: data.longitude,
+      },
+    });
+    return { success: true, dealer };
+  } catch (error) {
+    console.error("Failed to create dealer:", error);
+    return { success: false, error: "Database error occurred while creating dealer." };
+  }
+}
+
+export async function getAllDealers() {
+  try {
+    const dealers = await prisma.dealer.findMany({
+      orderBy: { createdAt: 'desc' }
+    });
+    return { success: true, dealers };
+  } catch (error) {
+    console.error("Failed to fetch dealers:", error);
+    return { success: false, error: "Database error occurred while fetching dealers.", dealers: [] };
+  }
+}
+
+export async function deleteDealer(id: string) {
+  try {
+    await prisma.dealer.delete({
+      where: { id }
+    });
+    return { success: true };
+  } catch (error) {
+    console.error("Failed to delete dealer:", error);
+    return { success: false, error: "Database error occurred." };
+  }
+}
+
 import bcrypt from 'bcryptjs';
 
 export async function generatePasswordHash(password: string) {
   try {
     const hash = await bcrypt.hash(password, 10);
     return { success: true, hash };
-  } catch (error) {
+  } catch {
     return { success: false, error: "Failed to generate hash" };
   }
 }

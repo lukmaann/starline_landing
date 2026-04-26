@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
         setError(true);
         setIsLoading(false);
       }
-    } catch (err) {
+    } catch {
       setError(true);
       setIsLoading(false);
     }

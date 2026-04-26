@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Settings, ShieldAlert, KeyRound, Bell, Check } from "lucide-react";
+import { ShieldAlert, KeyRound, Bell, Check } from "lucide-react";
 import { generatePasswordHash } from "@/lib/actions";
 
 export default function SettingsPage() {

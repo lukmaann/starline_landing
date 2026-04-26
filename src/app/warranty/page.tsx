@@ -71,13 +71,13 @@ export default function WarrantyPage() {
                 To claim warranty, customers are required to present a valid proof of purchase along with the original warranty card or invoice. The battery must be returned to an authorized Starline dealer or service center for inspection. The decision regarding repair or replacement will be based on technical evaluation and company guidelines.
               </p>
               <p className="text-white/70 leading-relaxed relative z-10">
-                Starline Batteries reserves the right to determine the cause of failure and take appropriate action under the warranty terms. The company’s liability is limited strictly to repair or replacement of the battery and does not extend to any indirect or consequential damages.
+                Starline Batteries reserves the right to determine the cause of failure and take appropriate action under the warranty terms. The company&apos;s liability is limited strictly to repair or replacement of the battery and does not extend to any indirect or consequential damages.
               </p>
             </div>
 
             <div className="text-center pt-8 border-t border-white/10">
               <p className="text-xl text-white/90 leading-relaxed mb-8 font-light italic">
-                "Our goal is not just to deliver power, but to build trust that lasts. With Starline, you can be confident that every battery is backed by reliability, accountability, and support you can depend on."
+                &ldquo;Our goal is not just to deliver power, but to build trust that lasts. With Starline, you can be confident that every battery is backed by reliability, accountability, and support you can depend on.&rdquo;
               </p>
               <h4 className="text-3xl font-black text-white uppercase tracking-wider">
                 Starline Batteries

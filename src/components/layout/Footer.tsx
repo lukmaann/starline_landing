@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Globe, MessageCircle, Navigation, MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
