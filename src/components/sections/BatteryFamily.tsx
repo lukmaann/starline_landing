@@ -11,7 +11,7 @@ const families = [
     tagline: "Built for pure performance",
     image: "/images/family_auto.png",
     exploreText: "Explore Automotive",
-    link: "#automotive",
+    link: "/products/automotive",
   },
   {
     title: "Inverter Range",
